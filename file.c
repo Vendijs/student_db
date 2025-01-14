@@ -56,7 +56,7 @@ struct student *data_read( const char *file, int *count ){
 		br = read( fd, data + *count, sizeof(struct student) );
 		if ( br < sizeof(struct student) )
 			break;
-		*count++;
+		(*count)++;
 		data = (struct student *)realloc( data, sizeof(struct student) * (*count + 1) );
 		if ( !data ) {
 			printf("Realloc failed\n");
